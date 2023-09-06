@@ -1,0 +1,20 @@
+
+<span style="font-size: 86px; margin-top:0px;">{{ computer }}</span>
+<span style="margin: 20px;font-size: 86px;">-</span>
+<span style="font-size: 86px;">{{ user }}</span>
+<br><br><br>
+<span style="margin-right: 160px;font-size:larger;">{{ compScore }}</span><span style="font-size: larger;">{{ userScore }}</span>
+
+<h4 style="text-align: center; margin-right: 60px; margin-top: 25px;">Computer<span style="margin: 60px; color: tomato;">vs</span>User</h4>
+
+<h5 [hidden]="userScore === 5 || compScore===5" style="margin: 50px;">Make A Choice</h5>
+
+<button [hidden]="userScore === 5 || compScore===5" class="btn btn-outline-light btn-lg" style="margin-right: 50px;" (click)="onStoneClick()">Stone</button>
+<button [hidden]="userScore === 5 || compScore===5" class="btn btn-outline-light btn-lg" (click)="onPaperClick()">Paper</button>
+<button [hidden]="userScore === 5 || compScore===5" class="btn btn-outline-light btn-lg" (click)="onScissorClick()">Scissor</button>
+<br><br>
+
+<h2 *ngIf="userScore === 5">Congratulations!.... You Won the game.
+    <button (click)="reset()" class="btn btn-link">Play Again..</button>
+</h2>
+<h2 *ngIf="compScore === 5">Better Luck Next Time....<button (click)="reset()" class="btn btn-link">Try Again</button></h2>
